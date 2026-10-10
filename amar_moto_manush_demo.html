@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>আমার মতো মানুষ — Demo</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans Bengali",sans-serif;background:#f5f7fb;color:#172033}
+.wrap{max-width:900px;margin:auto;padding:24px}.hero{background:linear-gradient(135deg,#173bff,#6c4cff);color:#fff;border-radius:28px;padding:34px;box-shadow:0 18px 50px #233cff25}
+h1{font-size:38px;margin:0 0 10px}.sub{font-size:17px;opacity:.9}.card{background:#fff;border-radius:22px;padding:25px;margin-top:20px;box-shadow:0 8px 30px #17203312}
+.progress{height:8px;background:#e8ebf2;border-radius:99px;overflow:hidden}.bar{height:100%;background:#4c62ff;width:20%;transition:.3s}
+.q{font-size:24px;font-weight:800;margin:22px 0 16px}.opts{display:grid;gap:12px}.opt{border:1px solid #dfe3ed;background:#fff;padding:15px;border-radius:14px;text-align:left;font-size:16px;cursor:pointer}.opt:hover{border-color:#4c62ff;background:#f7f8ff}
+button.primary{border:0;background:#173bff;color:#fff;padding:14px 20px;border-radius:13px;font-size:16px;font-weight:700;cursor:pointer;margin-top:18px}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat div{background:#f5f7ff;border-radius:16px;padding:18px;text-align:center}.num{font-size:27px;font-weight:900;color:#2745ed}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}.row{margin:15px 0}.label{display:flex;justify-content:space-between;font-size:14px}.track{height:10px;background:#e7e9ef;border-radius:99px}.fill{height:100%;background:#4c62ff;border-radius:99px}
+.share{background:#111a33;color:#fff;border-radius:18px;padding:22px;text-align:center;margin-top:18px}
+.hidden{display:none}.tag{display:inline-block;background:#e8edff;color:#2442dc;padding:7px 11px;border-radius:99px;font-size:13px;font-weight:700}
+@media(max-width:600px){h1{font-size:30px}.stat{grid-template-columns:1fr}.compare{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<h1>আমার মতো মানুষ আর কতজন?</h1>
+<div class="sub">তোমার জীবনযাপন, খরচ ও অভ্যাসের সঙ্গে মিল আছে এমন মানুষদের খুঁজে দেখো।</div>
+</section>
+
+<div id="quiz" class="card">
+<div class="progress"><div id="bar" class="bar"></div></div>
+<div id="q"></div><div id="opts" class="opts"></div>
+<button id="next" class="primary" style="display:none">পরের প্রশ্ন →</button>
+</div>
+
+<div id="result" class="card hidden">
+<span class="tag">তোমার লাইফস্টাইল রিপোর্ট</span>
+<h2>তোমার মতো মানুষ পাওয়া গেছে <span class="num">১,২৮৭ জন</span></h2>
+<div class="stat">
+<div><div class="num">৭২/১০০</div>সঞ্চয় স্কোর</div>
+<div><div class="num">৳২৯,৫০০</div>মাসিক গড় খরচ</div>
+<div><div class="num">৮৬%</div>লাইফস্টাইল ম্যাচ</div>
+</div>
+<h3>তোমার খরচ বনাম একই ধরনের মানুষের গড়</h3>
+<div class="compare">
+<div>
+<div class="row"><div class="label"><span>বাসা</span><b>৳১২,০০০</b></div><div class="track"><div class="fill" style="width:75%"></div></div></div>
+<div class="row"><div class="label"><span>খাবার</span><b>৳৮,০০০</b></div><div class="track"><div class="fill" style="width:55%"></div></div></div>
+<div class="row"><div class="label"><span>যাতায়াত</span><b>৳৩,৫০০</b></div><div class="track"><div class="fill" style="width:32%"></div></div></div>
+</div>
+<div class="card" style="margin:0;background:#f7f8ff">
+<b>তোমার জন্য একটি পরামর্শ</b>
+<p>একই ধরনের মানুষের গড়ের তুলনায় খাবারে তোমার খরচ প্রায় ৳১,১০০ বেশি। মাসে এই অংশ কমাতে পারলে বছরে প্রায় ৳১৩,২০০ সঞ্চয় হতে পারে।</p>
+</div>
+</div>
+<div class="share">🔥 <b>আমার মতো মানুষ বাংলাদেশে ১,২৮৭ জন!</b><br><small>তোমার মতো মানুষ কতজন? খুঁজে দেখো →</small></div>
+</div>
+</div>
+<script>
+const qs=[
+["তুমি কোন জেলায় থাকো?",["ঢাকা","চট্টগ্রাম","রাজশাহী","সিলেট","অন্যান্য"]],
+["মাসে তোমার আনুমানিক খরচ কত?",["৳১৫,০০০-এর কম","৳১৫–৩০ হাজার","৳৩০–৫০ হাজার","৳৫০ হাজারের বেশি"]],
+["তোমার প্রধান আয়ের উৎস?",["চাকরি","ব্যবসা","ফ্রিল্যান্সিং","অন্যান্য"]],
+["মাসের শেষে সাধারণত কত টাকা বাঁচে?",["কিছুই না","৳১–৫ হাজার","৳৫–১০ হাজার","৳১০ হাজারের বেশি"]],
+["তোমার সবচেয়ে বড় খরচ কোনটি?",["বাসা","খাবার","যাতায়াত","অন্যান্য"]]
+];
+let i=0; const q=document.getElementById("q"),opts=document.getElementById("opts"),next=document.getElementById("next"),bar=document.getElementById("bar");
+function render(){q.innerHTML=`<div class="q">${qs[i][0]}</div>`;opts.innerHTML=qs[i][1].map(x=>`<button class="opt">${x}</button>`).join("");next.style.display="none";bar.style.width=((i+1)/qs.length*100)+"%";document.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{document.querySelectorAll(".opt").forEach(x=>x.style.borderColor="#dfe3ed");b.style.borderColor="#4c62ff";next.style.display="block"});}
+next.onclick=()=>{i++;if(i<qs.length)render();else{document.getElementById("quiz").classList.add("hidden");document.getElementById("result").classList.remove("hidden");}};
+render();
+</script>
+</body>
+</html>

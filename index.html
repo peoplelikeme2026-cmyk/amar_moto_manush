@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101735">
+<meta name="description" content="আমার মতো মানুষ আর কতজন? — নিজের জীবনযাপন বুঝুন, মিল খুঁজুন, সঞ্চয়ের আইডিয়া পান।">
+<title>আমার মতো মানুষ — নিজের মতো মানুষ খুঁজে নাও</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+:root{--ink:#121936;--muted:#69718b;--blue:#5d5cf6;--purple:#8b5cf6;--mint:#b8f5d7;--paper:#f5f6ff;--line:#e7e9f4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Hind Siliguri",system-ui,sans-serif;background:var(--paper);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 max(5%,calc((100% - 1120px)/2));background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.brand{display:flex;gap:10px;align-items:center;font-size:20px;font-weight:700}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--purple));display:grid;place-items:center;color:white;font-size:23px;box-shadow:0 8px 18px #5d5cf633}
+.navbtn,.btn{border:0;border-radius:14px;padding:12px 18px;font-weight:700;transition:.2s}.navbtn{background:#f0efff;color:#5146e5}.btn-primary{background:linear-gradient(135deg,var(--blue),var(--purple));color:white;box-shadow:0 10px 22px #5d5cf633}.btn-primary:hover{transform:translateY(-2px)}.btn-light{background:white;color:var(--ink);border:1px solid var(--line)}
+main{max-width:1120px;margin:auto;padding:30px 22px 70px}.hero{background:radial-gradient(circle at 85% 15%,#9f9cff 0,transparent 29%),linear-gradient(135deg,#101735,#252b66 65%,#5b4de6);color:white;border-radius:32px;padding:clamp(28px,6vw,68px);display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;overflow:hidden;position:relative}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;background:#ffffff1c;border:1px solid #ffffff35;border-radius:99px;font-size:13px;color:#e6e7ff}.hero h1{font-size:clamp(36px,5.6vw,62px);line-height:1.12;letter-spacing:-1px;margin:20px 0 16px}.hero p{font-size:18px;line-height:1.75;color:#e0e4ff;max-width:560px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.hero .btn-light{border:0}.hero-art{min-height:260px;display:grid;place-items:center;position:relative}.orbit{width:min(310px,75vw);aspect-ratio:1;border:1px solid #ffffff40;border-radius:50%;display:grid;place-items:center;position:relative;background:#ffffff08}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #ffffff2b;border-radius:50%;inset:14%}.orbit:after{inset:28%}.big-emoji{font-size:100px;filter:drop-shadow(0 15px 25px #0003);z-index:2}.bubble{position:absolute;background:white;color:var(--ink);padding:10px 14px;border-radius:16px;font-size:14px;font-weight:700;box-shadow:0 10px 25px #0002;z-index:3}.b1{top:15%;left:-4%}.b2{right:-5%;top:34%}.b3{bottom:12%;left:6%}
+.trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 50px}.trust{background:white;border:1px solid var(--line);padding:18px;border-radius:18px;display:flex;gap:12px;align-items:center}.trust .ico{font-size:27px}.trust b{display:block}.trust small{color:var(--muted)}
+.section-head{text-align:center;margin:0 auto 26px;max-width:620px}.section-head h2{font-size:clamp(27px,4vw,38px);margin:0 0 8px}.section-head p{color:var(--muted);margin:0;line-height:1.7}
+.panel{background:white;border:1px solid var(--line);border-radius:26px;padding:clamp(20px,4vw,38px);box-shadow:0 12px 35px #22244d08}.step-top{display:flex;justify-content:space-between;gap:14px;align-items:center}.step-label{font-size:13px;color:var(--muted);font-weight:700}.progress{height:8px;background:#eeeff7;border-radius:99px;margin:16px 0 28px;overflow:hidden}.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .3s}
+.question{font-size:clamp(23px,3.6vw,32px);font-weight:700;margin:0 0 8px}.hint{color:var(--muted);margin:0 0 22px}.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.choice{padding:16px;text-align:left;border:1.5px solid var(--line);border-radius:16px;background:#fff;display:flex;align-items:center;gap:12px;min-height:72px;transition:.2s}.choice:hover{border-color:#aaa8ff;background:#faf9ff}.choice.selected{border-color:var(--blue);background:#f1f0ff;box-shadow:0 0 0 3px #5d5cf612}.choice .em{font-size:25px}.choice strong{display:block}.choice small{color:var(--muted);font-size:12px}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.field label{display:block;font-size:13px;font-weight:700;margin:0 0 7px}.field input,.field select{width:100%;border:1.5px solid var(--line);border-radius:13px;padding:13px;background:white;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:var(--blue)}.step-actions{display:flex;justify-content:space-between;gap:12px;margin-top:25px}.error{color:#c2414b;font-size:14px;min-height:22px}
+.result{display:none}.result-head{background:linear-gradient(135deg,#121936,#4039a5);border-radius:22px;color:white;padding:28px;position:relative;overflow:hidden}.result-head:after{content:"✦";position:absolute;font-size:180px;right:12px;top:-55px;color:#ffffff0d}.result-head h2{font-size:clamp(28px,4vw,40px);margin:10px 0}.result-head p{color:#e1e2ff;margin:0}.pill{display:inline-block;padding:6px 11px;background:#ffffff20;border-radius:99px;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.stat{background:#f7f7ff;border:1px solid var(--line);border-radius:18px;padding:20px;text-align:center}.stat .n{font-size:clamp(25px,4vw,34px);font-weight:700;color:#5146e5}.stat small{color:var(--muted)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.result-card{background:white;border:1px solid var(--line);border-radius:22px;padding:22px}.result-card h3{margin:0 0 15px}.barrow{margin:15px 0}.barlabels{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin-bottom:7px}.track{height:9px;border-radius:99px;background:#ececf6;overflow:hidden}.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--purple))}
+.tip{background:#ecfff5;border:1px solid #c7f2dc;border-radius:16px;padding:16px;line-height:1.65}.tip strong{color:#166344}.disclaimer{font-size:12px;color:var(--muted);line-height:1.6;margin-top:14px}
+.sharecard{background:linear-gradient(135deg,#eff0ff,#f8edff);border:1px solid #dfdcff;border-radius:22px;padding:24px;text-align:center;margin-top:18px}.sharecard h3{font-size:25px;margin:8px 0}.share-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}.how-card{padding:22px;background:white;border:1px solid var(--line);border-radius:20px}.how-card .icon{font-size:29px}.how-card h3{margin:12px 0 6px}.how-card p{color:var(--muted);font-size:14px;line-height:1.65;margin:0}
+footer{background:#101735;color:#d8dcf4;padding:32px 22px;text-align:center}.footer-inner{max-width:1120px;margin:auto}.credit{font-weight:700;color:white}.footer-small{font-size:12px;color:#aeb5dc;margin-top:8px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#121936;color:white;padding:12px 18px;border-radius:13px;box-shadow:0 12px 35px #0002;display:none;z-index:30}
+@media(max-width:760px){nav{height:66px;padding:0 16px}.brand{font-size:17px}.hero{grid-template-columns:1fr;padding:28px 24px}.hero-art{min-height:210px}.orbit{width:220px}.big-emoji{font-size:78px}.b1{left:0}.b2{right:0}.trust-row{grid-template-columns:1fr;margin-bottom:38px}.choices{grid-template-columns:1fr}.formrow,.result-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.how{grid-template-columns:1fr}.step-actions{position:sticky;bottom:0;background:#ffffffed;padding:10px 0;backdrop-filter:blur(8px)}main{padding:18px 14px 45px}}
+</style>
+</head>
+<body>
+<nav>
+ <div class="brand"><span class="logo">✦</span><span>আমার মতো মানুষ</span></div>
+ <button class="navbtn" onclick="scrollToQuiz()">নিজের রিপোর্ট তৈরি করুন ↗</button>
+</nav>
+<main>
+<section class="hero">
+ <div>
+  <span class="eyebrow">✨ নিজের মতো মানুষ খুঁজে দেখো</span>
+  <h1>তোমার মতো মানুষ<br>আর কতজন?</h1>
+  <p>কয়েকটি সহজ প্রশ্নের উত্তর দাও। নিজের অভ্যাস, খরচের ধরন আর লক্ষ্য সম্পর্কে জানো—আর খুঁজে দেখো তোমার সঙ্গে কারা মিলে যায়।</p>
+  <div class="hero-actions"><button class="btn btn-light" onclick="scrollToQuiz()">ফ্রি রিপোর্ট তৈরি করি →</button><button class="btn" style="background:#ffffff20;color:white;border:1px solid #ffffff40" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">কীভাবে কাজ করে?</button></div>
+ </div>
+ <div class="hero-art"><div class="orbit"><div class="big-emoji">🧑‍🤝‍🧑</div><div class="bubble b1">💸 খরচের ধরন</div><div class="bubble b2">🎯 একই লক্ষ্য</div><div class="bubble b3">✨ তোমার মতো!</div></div></div>
+</section>
+<div class="trust-row">
+ <div class="trust"><span class="ico">🕒</span><div><b>মাত্র ১ মিনিট</b><small>সহজ কিছু প্রশ্ন</small></div></div>
+ <div class="trust"><span class="ico">🔐</span><div><b>ব্যক্তিগত তথ্য নয়</b><small>নাম দেওয়া ঐচ্ছিক</small></div></div>
+ <div class="trust"><span class="ico">📤</span><div><b>শেয়ার করার মতো</b><small>রিপোর্ট কার্ড তৈরি করো</small></div></div>
+</div>
+
+<section id="quizSection">
+ <div class="section-head"><h2>তোমার রিপোর্ট তৈরি করো</h2><p>তোমার উত্তর থেকে বাস্তব ব্যবহারকারীদের সঙ্গে মিল হিসাব হবে। উত্তর সংরক্ষণের আগে সম্মতি দিতে হবে; ব্যক্তিগত নাম বা ফোন নম্বর লাগবে না।</p></div>
+ <div class="panel" id="quizPanel">
+  <div class="step-top"><span class="step-label" id="stepLabel">প্রশ্ন ১ / ৬</span><span class="step-label" id="stepPct">১৭% সম্পন্ন</span></div>
+  <div class="progress"><div id="progressBar"></div></div>
+  <div id="questionArea"></div>
+  <div class="error" id="error"></div>
+  <div style="margin-top:18px;padding:14px 16px;border:1px solid #e7e9f4;border-radius:14px;background:#fafaff;line-height:1.6;font-size:14px">
+   <label style="display:flex;gap:10px;align-items:flex-start"><input id="dataConsent" type="checkbox" style="margin-top:5px;flex:0 0 auto"><span><strong>আমি সম্মতি দিচ্ছি</strong>—আমার বেছে নেওয়া ৬টি উত্তর নাম/ফোন নম্বর ছাড়া ডেটাবেসে সংরক্ষণ করে অন্য ব্যবহারকারীদের উত্তরের সঙ্গে তুলনা করা যাবে। এতে আমার মিলের শতাংশ ও মিল থাকা মানুষের সংখ্যা হিসাব হবে। সম্মতি না দিলে বাস্তব তুলনার রিপোর্ট তৈরি হবে না।</span></label>
+   <div style="margin:8px 0 0 28px;color:#69718b;font-size:12px">এটি চালু করতে ওয়েবসাইটটি সার্ভার ও ডেটাবেসে হোস্ট করতে হবে।</div>
+  </div>
+  <div class="step-actions"><button class="btn btn-light" id="backBtn" onclick="back()" style="visibility:hidden">← আগের প্রশ্ন</button><button class="btn btn-primary" id="nextBtn" onclick="next()">পরের প্রশ্ন →</button></div>
+ </div>
+</section>
+
+<section class="result" id="resultSection">
+ <div class="section-head"><h2>তোমার রিপোর্ট তৈরি! 🎉</h2><p>তোমার উত্তর এবং সম্মতি দেওয়া বাস্তব ব্যবহারকারীদের ডেটার ভিত্তিতে রিপোর্ট।</p></div>
+ <div class="result-head" id="shareVisual">
+  <span class="pill">MY-LIKE REPORT · REAL USER MATCH</span>
+  <h2 id="resultTitle">তুমি একজন পরিকল্পনাকারী!</h2>
+  <p id="resultIntro">তুমি নিজের ভবিষ্যৎ নিয়ে ভাবো এবং খরচ বুঝে চলতে পছন্দ করো।</p>
+ </div>
+ <div class="stats">
+  <div class="stat"><div class="n" id="matchScore">৭৮%</div><small>বাস্তব ব্যবহারকারীদের সঙ্গে গড় মিল</small></div>
+  <div class="stat"><div class="n" id="savingScore">—</div><small>সঞ্চয়-অভ্যাস স্কোর*</small></div>
+  <div class="stat"><div class="n" id="matchCount">—</div><small>৮০% বা তার বেশি মিল থাকা ব্যবহারকারী</small></div>
+  <div class="stat"><div class="n" id="monthlySpend">৳২৫,০০০</div><small>তোমার বেছে নেওয়া খরচের রেঞ্জ</small></div>
+ </div>
+ <div class="result-grid">
+  <div class="result-card"><h3>📊 তোমার জীবনযাপনের প্রোফাইল</h3><div id="bars"></div></div>
+  <div class="result-card"><h3>💡 তোমার জন্য ছোট্ট পরামর্শ</h3><div class="tip"><strong id="tipTitle">সঞ্চয়ের ছোট পদক্ষেপ</strong><div id="tipText">মাসের শুরুতেই সঞ্চয়ের লক্ষ্য ঠিক করো।</div></div><p class="disclaimer" id="matchNote">মিলের হিসাব এই ওয়েবসাইটে সম্মতি দিয়ে উত্তর জমা দেওয়া ব্যবহারকারীদের ডেটা থেকে তৈরি হবে; এটি বাংলাদেশের সব মানুষের পরিসংখ্যান নয়।</p></div>
+ </div>
+ <div class="sharecard" id="shareCard"><div style="font-size:34px">✨</div><div class="tag">আমার মতো মানুষ</div><h3 id="shareTitle">আমি একজন পরিকল্পনাকারী!</h3><p id="shareText">আমার লাইফস্টাইল রিপোর্ট দেখে তোমারটাও তৈরি করো।</p><div class="share-actions"><button class="btn btn-primary" onclick="shareResult()">বন্ধুকে চ্যালেঞ্জ করো ↗</button><button class="btn btn-light" onclick="window.print()">রিপোর্ট সেভ / প্রিন্ট</button><button class="btn btn-light" onclick="restart()">আবার করো ↻</button><button class="btn btn-light" onclick="deleteMyData()">আমার সংরক্ষিত উত্তর মুছুন</button></div></div>
+</section>
+
+<section id="how" style="padding-top:54px">
+ <div class="section-head"><h2>এটা কীভাবে কাজ করে?</h2><p>সহজ, মজার এবং কাজে লাগার মতো—এক মিনিটেই শুরু করো।</p></div>
+ <div class="how">
+  <div class="how-card"><div class="icon">📝</div><h3>১. উত্তর দাও</h3><p>তোমার এলাকা, খরচের রেঞ্জ, আয় ও সঞ্চয়ের অভ্যাস নিয়ে কয়েকটি প্রশ্নের উত্তর দাও।</p></div>
+  <div class="how-card"><div class="icon">🧩</div><h3>২. নিজের ধরন জানো</h3><p>তোমার উত্তর থেকে তৈরি হবে একটি মজার প্রোফাইল ও সঞ্চয়ের জন্য ব্যবহারিক পরামর্শ।</p></div>
+  <div class="how-card"><div class="icon">📲</div><h3>৩. বন্ধুদের সঙ্গে শেয়ার</h3><p>নিজের রিপোর্ট শেয়ার করে বন্ধুদেরও তাদের রিপোর্ট তৈরি করতে আমন্ত্রণ জানাও।</p></div>
+ </div>
+</section>
+</main>
+<footer><div class="footer-inner"><div class="credit">তৈরি করেছেন: <span id="creatorName">আপনার নাম</span></div><div class="footer-small">“আমার মতো মানুষ” — একটি স্বাধীন ডেমো প্রজেক্ট। নিজের নাম বদলাতে index.html ফাইলে CREATOR_NAME খুঁজুন।</div><div class="footer-small">বাস্তব ম্যাচিংয়ের জন্য সার্ভার চালু ও ডেটাবেসে হোস্ট করা আবশ্যক। ব্যবহারকারীদের উত্তর সংরক্ষণ করা হবে শুধু স্পষ্ট সম্মতির পরে।</div></div></footer>
+<div class="toast" id="toast"></div>
+<script>
+const CREATOR_NAME = "আপনার নাম"; // এখানে আপনার নাম লিখুন
+const questions = [
+ {key:"district",title:"তুমি বাংলাদেশের কোন এলাকার?",hint:"তোমার বর্তমান এলাকা বেছে নাও।",opts:[["🏙️","ঢাকা বিভাগ","ঢাকা ও আশপাশ"],["🌊","চট্টগ্রাম বিভাগ","দক্ষিণ-পূর্বাঞ্চল"],["🌿","রাজশাহী / রংপুর","উত্তরাঞ্চল"],["🌧️","সিলেট / ময়মনসিংহ / খুলনা / বরিশাল","অন্যান্য বিভাগ"]]},
+ {key:"spend",title:"মাসে মোটামুটি কত খরচ হয়?",hint:"সঠিক অঙ্ক লাগবে না—একটি রেঞ্জ বেছে নাও।",opts:[["🪙","৳১৫,০০০-এর কম","কম খরচ"],["💵","৳১৫,০০০–৳৩০,০০০","মাঝারি খরচ"],["💳","৳৩০,০০০–৳৫০,০০০","উচ্চতর খরচ"],["🧾","৳৫০,০০০-এর বেশি","বেশি খরচ"]]},
+ {key:"income",title:"তোমার প্রধান আয়ের উৎস কী?",hint:"যেটি তোমার ক্ষেত্রে সবচেয়ে বেশি প্রযোজ্য সেটি বেছে নাও।",opts:[["🧑‍💼","চাকরি","নিয়মিত আয়"],["🏪","ব্যবসা","নিজের উদ্যোগ"],["💻","ফ্রিল্যান্সিং / অনলাইন","ডিজিটাল কাজ"],["🌱","পড়াশোনা / অন্যান্য","অন্যান্য উৎস"]]},
+ {key:"saving",title:"মাস শেষে সাধারণত কত টাকা সঞ্চয় করতে পারো?",hint:"সঞ্চয় না হলেও সমস্যা নেই—সৎ উত্তরই ভালো।",opts:[["🫧","সঞ্চয় করা কঠিন","এখনো চেষ্টা করছি"],["🐣","৳১–৳৫,০০০","ছোট সঞ্চয়"],["🌿","৳৫,০০০–৳১০,০০০","নিয়মিত সঞ্চয়"],["🚀","৳১০,০০০-এর বেশি","সঞ্চয়ে মনোযোগী"]]},
+ {key:"priority",title:"কোন বিষয়টি এখন তোমার কাছে সবচেয়ে জরুরি?",hint:"এটি তোমার পরামর্শ নির্ধারণে সাহায্য করবে।",opts:[["🏠","বাসা ও পরিবারের খরচ","পরিবার"],["🎓","পড়াশোনা / দক্ষতা","নিজেকে গড়া"],["✈️","ভ্রমণ ও অভিজ্ঞতা","নতুন অভিজ্ঞতা"],["💰","সঞ্চয় / ব্যবসা","আর্থিক লক্ষ্য"]]},
+ {key:"planning",title:"তুমি সাধারণত কীভাবে টাকা সামলাও?",hint:"তোমার দৈনন্দিন অভ্যাসের সবচেয়ে কাছেরটি বেছে নাও।",opts:[["📒","আগে থেকেই বাজেট করি","পরিকল্পিত"],["🤔","প্রয়োজন অনুযায়ী খরচ করি","নমনীয়"],["🛍️","মাঝেমধ্যে হঠাৎ খরচ হয়ে যায়","স্বতঃস্ফূর্ত"],["🎯","নির্দিষ্ট লক্ষ্য ধরে সঞ্চয় করি","লক্ষ্যভিত্তিক"]]}
+];
+let index=0, answers={};
+const bnNums=n=>String(n).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]);
+function renderQuestion(){
+ const q=questions[index];
+ document.getElementById("stepLabel").textContent=`প্রশ্ন ${bnNums(index+1)} / ${bnNums(questions.length)}`;
+ document.getElementById("stepPct").textContent=bnNums(Math.round((index+1)/questions.length*100))+"% সম্পন্ন";
+ document.getElementById("progressBar").style.width=((index+1)/questions.length*100)+"%";
+ document.getElementById("backBtn").style.visibility=index===0?"hidden":"visible";
+ document.getElementById("nextBtn").textContent=index===questions.length-1?"আমার রিপোর্ট দেখাও ✨":"পরের প্রশ্ন →";
+ document.getElementById("error").textContent="";
+ document.getElementById("questionArea").innerHTML=`<h3 class="question">${q.title}</h3><p class="hint">${q.hint}</p><div class="choices">${q.opts.map((o,i)=>`<button class="choice ${answers[q.key]===i?'selected':''}" onclick="choose('${q.key}',${i})"><span class="em">${o[0]}</span><span><strong>${o[1]}</strong><small>${o[2]}</small></span></button>`).join("")}</div>`;
+}
+function choose(key,val){answers[key]=val;renderQuestion()}
+function next(){if(answers[questions[index].key]===undefined){document.getElementById("error").textContent="পরের ধাপে যেতে একটি উত্তর বেছে নাও।";return}if(index<questions.length-1){index++;renderQuestion()}else showResult()}
+function back(){if(index>0){index--;renderQuestion()}}
+async function showResult(){
+ if(!document.getElementById("dataConsent").checked){document.getElementById("error").textContent="বাস্তব ব্যবহারকারীদের সঙ্গে মিল বের করতে ডেটা সংরক্ষণের সম্মতি দিন।";return}
+ document.getElementById("nextBtn").disabled=true;document.getElementById("nextBtn").textContent="বাস্তব ডেটার সঙ্গে মিল খোঁজা হচ্ছে…";
+ let matchData=null;
+ try {
+   const response=await fetch('/api/profiles',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({answers,consent:true})});
+   const data=await response.json();
+   if(!response.ok) throw new Error(data.error||'সার্ভারে সমস্যা হয়েছে।');
+   matchData=data;
+   if(data.deleteToken){const tokens=JSON.parse(localStorage.getItem('myLikeDeleteTokens')||'[]');tokens.push(data.deleteToken);localStorage.setItem('myLikeDeleteTokens',JSON.stringify(tokens));}
+ } catch(err) {
+   document.getElementById("error").textContent="বাস্তব ডেটাবেসের সঙ্গে সংযোগ হচ্ছে না। সাইটটি এখনো সার্ভারে চালু করা হয়নি বা সার্ভার বন্ধ আছে। কোনো ভুয়া মিলের সংখ্যা দেখানো হবে না।";
+   document.getElementById("nextBtn").disabled=false;document.getElementById("nextBtn").textContent="আমার রিপোর্ট দেখাও ✨";return;
+ }
+ document.getElementById("quizPanel").style.display="none";document.getElementById("resultSection").style.display="block";
+ const spend=[10000,22500,40000,60000][answers.spend], saving=[0,3000,7500,14000][answers.saving];
+ const score=matchData.averageSimilarity;
+ let title="তুমি একজন ভারসাম্য-খোঁজার মানুষ!",intro="তুমি নিজের মতো চলতে পছন্দ করো—একটু পরিকল্পনা তোমাকে আরও এগিয়ে নিতে পারে।",tipTitle="ছোট অভ্যাস, বড় পরিবর্তন",tipText="প্রতিদিনের ছোট খরচগুলো এক সপ্তাহ লিখে রাখো। কোন জায়গায় কমানো সম্ভব, তা সহজে বুঝতে পারবে।";
+ if(answers.planning===0||answers.planning===3){title="তুমি একজন পরিকল্পনাকারী!";intro="তুমি লক্ষ্য ঠিক করতে এবং নিজের সিদ্ধান্ত নিয়ে ভাবতে পছন্দ করো। এই অভ্যাস তোমার শক্তি হতে পারে।";tipTitle="তোমার পরিকল্পনাকে কাজে লাগাও";tipText="সঞ্চয়ের লক্ষ্যকে ছোট মাসিক ধাপে ভাগ করো এবং মাসের শুরুতেই সেই টাকা আলাদা রাখার চেষ্টা করো।"}
+ if(answers.planning===2){title="তুমি একজন স্বতঃস্ফূর্ত মানুষ!";intro="তুমি মুহূর্ত উপভোগ করতে ভালোবাসো। একটু সচেতন পরিকল্পনা রাখলে আনন্দ আর সঞ্চয়—দুটোর ভারসাম্য রাখা সহজ হতে পারে।";tipTitle="২৪ ঘণ্টার নিয়ম";tipText="অপ্রয়োজনীয় কিছু কেনার আগে ২৪ ঘণ্টা অপেক্ষা করো। পরদিনও দরকার মনে হলে বাজেট দেখে সিদ্ধান্ত নাও।"}
+ if(answers.saving===0){tipTitle="সঞ্চয় শুরু হোক ছোট করে";tipText="একবারে বড় অঙ্ক নয়—সম্ভব হলে সপ্তাহে অল্প টাকা আলাদা রাখো। প্রথম লক্ষ্য হতে পারে জরুরি খরচের জন্য ছোট একটি তহবিল তৈরি করা।"}
+ const fmt=n=>"৳"+n.toLocaleString("en-US");
+ document.getElementById("resultTitle").textContent=title;document.getElementById("resultIntro").textContent=intro;document.getElementById("shareTitle").textContent=title;
+ document.getElementById("matchScore").textContent=score===null?"নতুন":bnNums(score)+"%";
+ document.getElementById("matchCount").textContent=bnNums(matchData.matchCount);
+ document.getElementById("savingScore").textContent=bnNums(Math.min(100,30+answers.saving*20+(answers.planning===3?10:0)))+"/১০০";
+ document.getElementById("matchNote").textContent=matchData.comparedUsers===0?"তোমার রিপোর্ট সংরক্ষিত হয়েছে। এখনো তুলনা করার মতো অন্য ব্যবহারকারীর উত্তর নেই। আরও মানুষ উত্তর দিলে বাস্তব মিলের স্কোর ও সংখ্যা দেখা যাবে।":`এ পর্যন্ত এই সাইটে সম্মতি দিয়ে উত্তর দেওয়া ${bnNums(matchData.comparedUsers)} জনের সঙ্গে তুলনা করা হয়েছে। ${bnNums(matchData.matchCount)} জনের সঙ্গে মিল ৮০% বা তার বেশি। এটি শুধু এই সাইটের ব্যবহারকারীদের তথ্য, বাংলাদেশের মোট জনসংখ্যার হিসাব নয়।`;
+ document.getElementById("monthlySpend").textContent=fmt(spend);document.getElementById("tipTitle").textContent=tipTitle;document.getElementById("tipText").textContent=tipText;
+ const cats=[["সঞ্চয় করার অভ্যাস",Math.min(95,20+answers.saving*24)],["পরিকল্পনার অভ্যাস",[85,58,35,92][answers.planning]],["নতুন অভিজ্ঞতার আগ্রহ",answers.priority===2?88:answers.priority===1?72:60],["খরচ সামলানোর সচেতনতা",[80,68,45,38][answers.spend]]];
+ document.getElementById("bars").innerHTML=cats.map(c=>`<div class="barrow"><div class="barlabels"><span>${c[0]}</span><b>${bnNums(c[1])}%</b></div><div class="track"><div class="fill" style="width:${c[1]}%"></div></div></div>`).join("");
+ document.getElementById("shareText").textContent=`আমার রিপোর্ট তৈরি! বাস্তব ব্যবহারকারীদের মধ্যে ${matchData.matchCount} জনের সঙ্গে আমার মিল ৮০% বা তার বেশি। তুমিও নিজের রিপোর্ট তৈরি করো।`;
+ document.getElementById("quizSection").scrollIntoView({behavior:"smooth"});
+}
+async function deleteMyData(){
+ const tokens=JSON.parse(localStorage.getItem('myLikeDeleteTokens')||'[]');
+ if(!tokens.length){toast('এই ব্রাউজারে মুছে ফেলার কোনো সংরক্ষিত টোকেন নেই।');return}
+ if(!confirm('এই ব্রাউজার থেকে জমা দেওয়া তোমার সংরক্ষিত উত্তরগুলো ডেটাবেস থেকে মুছে ফেলতে চাও?')) return;
+ let deleted=0; const remaining=[];
+ for(const token of tokens){try{const r=await fetch('/api/profiles/me',{method:'DELETE',headers:{'X-Delete-Token':token}});if(r.ok)deleted++;else if(r.status!==404)remaining.push(token)}catch(e){remaining.push(token)}}
+ localStorage.setItem('myLikeDeleteTokens',JSON.stringify(remaining));
+ toast(deleted?`${bnNums(deleted)}টি সংরক্ষিত প্রোফাইল মুছে ফেলা হয়েছে।`:'সার্ভারের সঙ্গে যোগাযোগ হয়নি; পরে আবার চেষ্টা করো।');
+}
+async function shareResult(){const text=`আমার রিপোর্ট: ${document.getElementById("resultTitle").textContent}\n“আমার মতো মানুষ” ডেমোতে নিজের রিপোর্ট তৈরি করো!`;if(navigator.share){try{await navigator.share({title:"আমার মতো মানুষ",text})}catch(e){}}else{try{await navigator.clipboard.writeText(text);toast("শেয়ার করার লেখা কপি হয়েছে!")}catch(e){toast("এই রিপোর্টের স্ক্রিনশট নিয়ে শেয়ার করতে পারো।")}}}
+function restart(){answers={};index=0;document.getElementById("quizPanel").style.display="block";document.getElementById("resultSection").style.display="none";document.getElementById("dataConsent").checked=false;document.getElementById("nextBtn").disabled=false;document.getElementById("nextBtn").textContent="পরের প্রশ্ন →";renderQuestion();scrollToQuiz()}
+function scrollToQuiz(){document.getElementById("quizSection").scrollIntoView({behavior:"smooth"})}
+function toast(s){const t=document.getElementById("toast");t.textContent=s;t.style.display="block";setTimeout(()=>t.style.display="none",2600)}
+document.getElementById("creatorName").textContent=CREATOR_NAME;
+// বাস্তব ব্যবহারকারীর মিল দেখাতে index.html-কে backend server থেকে পরিবেশন করতে হবে।
+renderQuestion();
+</script>
+</body>
+</html>
